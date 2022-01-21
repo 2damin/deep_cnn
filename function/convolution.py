@@ -46,11 +46,16 @@ class Conv:
                         input_j += self.stride
                     self.mat_i = 0
                     self.mat_j += 1
+        self.mat_i = 0
+        self.mat_j = 0
         return mat
     
     def mm(self, A, B):
-        return np.matmul(B, A)
-    
+        a_mat = self.im2col(A)
+        b_mat = B.reshape(B.shape[0], -1)
+        c_mat = np.matmul(b_mat, a_mat)
+        c = c_mat.reshape([self.batch, self.out_c, self.out_h, self.out_w])
+        return c
     
     def conv(self, A, B):
         C = np.zeros((self.batch, self.out_c, self.out_h, self.out_w), dtype=np.float64)
