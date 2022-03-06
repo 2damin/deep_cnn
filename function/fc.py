@@ -10,4 +10,4 @@ class FC:
     
     def fc(self, A, W):
         a_mat = A.reshape([self.batch, -1])
-        return np.dot(a_mat, np.transpose(W,[1,0]))
+        return np.dot(a_mat, np.reshape(W, [-1,1]))
