@@ -1,7 +1,8 @@
 import numpy as np
 
+#2D pool layer
 class Pool:
-    def __init__(self, batch, in_c, in_w, in_h, out_c, kernel, dilation, stride, pad):
+    def __init__(self, batch, in_c, out_c, in_h, in_w, kernel, dilation, stride, pad):
         self.batch = batch
         self.in_c = in_c
         self.in_w = in_w
