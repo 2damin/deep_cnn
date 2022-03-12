@@ -46,12 +46,12 @@ class Conv:
                                     self.mat_i += 1
                                 in_i += self.stride
                         in_j += self.stride
-                        self.mat_i = 0
+                    self.mat_i = 0
                     self.mat_j += 1
         self.mat_i = 0
         self.mat_j = 0
         return mat
-    
+
     #GEMM. 2D matrix multiplication
     def gemm(self, A, B):
         a_mat = self.im2col(A)
