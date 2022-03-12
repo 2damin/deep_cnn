@@ -14,8 +14,6 @@ class Pool:
         self.pad = pad
         self.out_w = (in_w + 2 * pad - kernel) // stride + 1
         self.out_h = (in_h + 2 * pad - kernel) // stride + 1
-        self.mat_i = 0
-        self.mat_j = 0
     
     def pool(self, A):
         C = np.zeros([self.batch,self.out_c,self.out_h,self.out_w])
