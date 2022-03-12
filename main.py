@@ -16,14 +16,16 @@ def convolution():
     print("convolution")
     
     #define the shape of input&weight
-    in_w = 3
-    in_h = 3
-    in_c = 1
+    in_w = 6
+    in_h = 6
+    in_c = 3
     out_c = 16
     batch = 1
+    k_w = 3
+    k_h = 3
     
-    X = np.arange(9, dtype=np.float32).reshape([batch,in_c,in_h,in_w]) 
-    W = np.array(np.random.standard_normal([out_c,in_c,in_h,in_w]), dtype=np.float32)
+    X = np.arange(in_w*in_h*in_c*batch, dtype=np.float32).reshape([batch,in_c,in_h,in_w]) 
+    W = np.array(np.random.standard_normal([out_c,in_c,k_h,k_w]), dtype=np.float32)
     #print(W)
     x_shape = X.shape
     w_shape = W.shape
